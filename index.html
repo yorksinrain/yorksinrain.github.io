@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhou Xinyu — Portfolio</title>
+<meta name="description" content="Portfolio of Zhou Xinyu (Zoey): industrial, wearable and UI/UX design. Keio University, Embodied Media Lab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#161616;--sub:#5e5e5e;--muted:#9a9a9a;--line:#dcdcdc;--bg:#fff;--soft:#f3f3f2;--accent:#d8432f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,"Helvetica Neue",Arial,"PingFang SC",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wide{font-family:Michroma,"Helvetica Neue",Arial,sans-serif;letter-spacing:.06em}
+  .wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+  /* ===== Cover ===== */
+  .cover{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;
+         background:linear-gradient(180deg,#fff 0%,#fff 55%,#eeeeec 100%)}
+  .orb{position:absolute;width:640px;height:640px;right:-120px;top:8%;border-radius:50%;pointer-events:none;
+       background:radial-gradient(circle at 40% 40%,#4a4a4a 0%,#8d8d8d 30%,#d8d8d8 58%,rgba(255,255,255,0) 72%);
+       filter:blur(46px);opacity:.55}
+  .cover > .wrap{position:relative;z-index:1;width:100%}
+  .c-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .logos{display:flex;align-items:center;gap:26px}
+  .logos img{height:28px;width:auto}
+  .logos .sep{width:1px;height:26px;background:var(--line)}
+  .c-top .idx{display:flex;gap:16px;font-size:10px;color:var(--muted)}
+  .c-top .idx b{color:var(--ink);font-weight:400}
+
+  .c-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:72px;padding-bottom:48px}
+  .title-frame{position:relative;display:inline-block;align-self:flex-start;padding:30px 44px 34px 26px;
+               border-left:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+  .title-frame::before{content:"";position:absolute;left:-1px;right:-60px;top:22px;border-top:1px solid var(--line)}
+  .title-frame .kick{position:absolute;top:0;left:12px;font-size:11px;color:var(--ink);background:#fff;padding:0 8px;transform:translateY(-55%)}
+  .title-frame h1{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:clamp(36px,8.4vw,108px);line-height:1.05;letter-spacing:.02em;margin-top:6px;white-space:nowrap}
+  .title-frame .year{position:absolute;right:-4px;top:4px;font-size:clamp(12px,1.4vw,16px)}
+  .title-frame .zoey{position:absolute;bottom:0;left:56%;transform:translateY(50%);background:#fff;padding:0 14px;
+                     font-size:13px;letter-spacing:.32em}
+  .c-role{margin-top:46px;max-width:620px;color:var(--sub);font-size:15px;font-weight:300}
+  .c-role b{color:var(--ink);font-weight:500}
+
+  .resume{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:36px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+  .resume h4{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:12px;letter-spacing:.1em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .resume h4::before{content:"";width:6px;height:6px;background:var(--accent)}
+  .resume ul{list-style:none;font-size:13px;color:var(--sub);line-height:1.5}
+  .resume li+li{margin-top:10px}
+  .resume li b{display:block;color:var(--ink);font-weight:500}
+  .resume li b a{text-decoration:none}
+  .resume li span{font-size:12px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chips span{font-size:11.5px;color:var(--sub);border:1px solid var(--line);padding:2px 9px;border-radius:20px;background:#fff}
+  .c-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:26px;font-size:10px;color:var(--muted)}
+  .c-bottom a{text-decoration:none;color:var(--ink)}
+
+  /* ===== Nav ===== */
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:54px}
+  nav .brand{font-size:12px;text-decoration:none}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:13px}
+  nav ul a{text-decoration:none;color:var(--sub)}
+  nav ul a:hover{color:var(--ink)}
+
+  /* ===== Sections ===== */
+  section{padding:88px 0;border-top:1px solid var(--line)}
+  .sec-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px;gap:16px}
+  .sec-title h2{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:clamp(22px,3vw,30px);letter-spacing:.06em}
+  .sec-title span{font-size:11px;color:var(--muted)}
+
+  .works{background:linear-gradient(180deg,#fff,#efefee)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .card{text-decoration:none;display:block;text-align:center}
+  .card .thumb{aspect-ratio:3/4;overflow:hidden;background:var(--soft)}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .card:hover img{transform:scale(1.04)}
+  .card .n{display:block;margin-top:18px;font-size:11px;color:var(--muted)}
+  .card .t{display:block;font-size:15px;font-weight:500;margin-top:4px}
+  .card .s{display:block;font-size:11.5px;color:var(--muted)}
+
+  .project-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px}
+  .project-head .num{font-size:11px;color:var(--accent);display:flex;align-items:center;gap:10px}
+  .project-head .num::before{content:"";width:8px;height:8px;background:var(--accent)}
+  .project-head h3{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:clamp(30px,5vw,54px);line-height:1.1;margin-top:12px}
+  .project-head p{font-size:15px;color:var(--sub)}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:13px;margin-top:18px}
+  .facts dt{color:var(--muted)}
+  .badge{display:inline-block;margin-top:16px;font-size:12px;border:1px solid var(--line);padding:4px 12px;border-radius:20px}
+  .pages img{width:100%;display:block;margin-bottom:14px;cursor:zoom-in;border:1px solid var(--line);background:var(--soft)}
+  .back{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted)}
+
+  /* ===== Contact (last page) ===== */
+  footer{min-height:70vh;display:flex;align-items:center;border-top:1px solid var(--line);
+         background:linear-gradient(180deg,#fff,#eeeeec)}
+  footer .wrap{width:100%;text-align:center}
+  footer .lbl{font-size:12px;color:var(--muted)}
+  footer a.mail{display:inline-block;margin-top:18px;font-family:Michroma,Arial,sans-serif;font-size:clamp(18px,3.4vw,34px);
+                text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:6px;letter-spacing:.02em}
+
+  #lb{position:fixed;inset:0;background:rgba(20,20,20,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;padding:16px}
+  #lb.on{display:flex}
+  #lb img{max-width:100%;max-height:100%}
+
+  @media (max-width:960px){.resume{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){
+    .resume,.project-head{grid-template-columns:1fr}
+    nav ul{display:none}
+    .logos img{height:22px}
+    .c-top .idx{display:none}
+    .title-frame{padding:26px 22px 30px 16px}
+    .title-frame h1{font-size:9.2vw}
+    .title-frame .zoey{left:auto;right:18px}
+    .orb{width:420px;height:420px;right:-200px;top:48%}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover" id="top">
+  <div class="orb"></div>
+  <div class="wrap c-top">
+    <div class="logos">
+      <img src="images/logo-kmd-dark.png" alt="Keio University Graduate School of Media Design">
+      <span class="sep"></span>
+      <img src="images/logo-em-dark.png" alt="Embodied Media Lab">
+    </div>
+    <div class="idx wide"><b>INTRO</b><span>WORKS</span><span>CONTACT</span></div>
+  </div>
+
+  <div class="wrap c-main">
+    <div class="title-frame">
+      <span class="kick wide">INDUSTRIAL DESIGN &nbsp;·&nbsp; HCI</span>
+      <span class="year wide">2026</span>
+      <h1>ZHOU XINYU</h1>
+      <span class="zoey wide">Zoey</span>
+    </div>
+    <p class="c-role">Designing <b>intelligent wearables</b> as extensions of human perception and <b>embodied experience</b> — from user research and prototyping to products people can use.</p>
+
+    <div class="resume">
+      <div><h4>PERSONAL INFO</h4><ul>
+        <li><b>Keio University</b><span>Graduate School of Media Design</span></li>
+        <li><b>Embodied Media Lab</b><span>Tokyo, Japan</span></li>
+        <li><b><a href="mailto:zhouxinyu@keio.jp">zhouxinyu@keio.jp</a></b></li>
+      </ul></div>
+      <div><h4>EDUCATION</h4><ul>
+        <li><b>Master of Media Design</b><span>Keio University · 2026–</span></li>
+        <li><b>B.Eng. Industrial Design, Honors</b><span>Donghua University · 2020–2024</span></li>
+      </ul></div>
+      <div><h4>AWARDS</h4><ul>
+        <li><b>IVRC Accepted Project</b><span>Stacking Light · 2026</span></li>
+        <li><b>MUSE Design Awards, Silver</b><span>Wearable Technology · 2025</span></li>
+        <li><b>DIA Shortlisted Nominee</b><span>China Design Intelligence Award · 2024</span></li>
+      </ul></div>
+      <div><h4>TOOL SKILL</h4><div class="chips">
+        <span>Figma</span><span>Rhino</span><span>SolidWorks</span><span>Blender</span><span>TouchDesigner</span>
+        <span>Unreal Engine</span><span>Arduino</span><span>Python</span><span>C/C++</span><span>PS / AI</span>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="wrap c-bottom wide">
+    <span>PORTFOLIO</span>
+    <a href="#works">SELECTED WORKS ↓</a>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a class="brand wide" href="#top">ZHOU XINYU</a>
+  <ul>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<section id="works" class="works"><div class="wrap">
+  <div class="sec-title"><h2>CONTENTS</h2><span class="wide">04 PROJECTS</span></div>
+  <div class="grid">
+    <a class="card" href="#bruxieaser"><div class="thumb"><img src="images/th-bruxi.jpg" alt="BruxiEaser" loading="lazy"></div>
+      <span class="n wide">01</span><span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
+    <a class="card" href="#buoywear"><div class="thumb"><img src="images/th-buoy.jpg" alt="BuoyWear" loading="lazy"></div>
+      <span class="n wide">02</span><span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
+    <a class="card" href="#careride"><div class="thumb"><img src="images/th-care.jpg" alt="CareRide" loading="lazy"></div>
+      <span class="n wide">03</span><span class="t">CareRide</span><span class="s">Elderly Medical Transport Service</span></a>
+    <a class="card" href="#riffloo"><div class="thumb"><img src="images/th-riff.jpg" alt="RiffLoo" loading="lazy"></div>
+      <span class="n wide">04</span><span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
+  </div>
+</div></section>
+
+<section id="bruxieaser"><div class="wrap">
+  <div class="project-head">
+    <div><div class="num wide">01 — WEARABLE TECHNOLOGIES</div><h3>BruxiEaser</h3></div>
+    <div>
+      <p>A lightweight, comfortable intraoral device that tracks teeth grinding during sleep, gives personalized insights through an app, and helps prevent long-term jaw health issues.</p>
+      <dl class="facts"><dt>Duration</dt><dd>14 weeks</dd><dt>Type</dt><dd>Group work</dd>
+        <dt>Video</dt><dd><a href="https://youtu.be/le2oSvLpWCc" target="_blank" rel="noopener">Watch on YouTube</a></dd></dl>
+      <span class="badge">MUSE Design Awards 2025 · Silver Winner</span>
+    </div>
+  </div>
+  <div class="pages" data-pages="3-10"></div>
+  <a class="back" href="#works">↑ Back to contents</a>
+</div></section>
+
+<section id="buoywear"><div class="wrap">
+  <div class="project-head">
+    <div><div class="num wide">02 — WEARABLE AND UX</div><h3>(Buoy)Wear</h3></div>
+    <div>
+      <p>A bracelet with an integrated airbag deployment system for beachgoers and surfers at risk of rip currents. It inflates when the wearer is caught in a current, helping them stay afloat, and alerts companions through the app.</p>
+      <dl class="facts"><dt>Time</dt><dd>Sep.–Nov. 2024 (8 + 2 weeks)</dd><dt>Type</dt><dd>Personal project</dd>
+        <dt>Area</dt><dd>Product // UI+UX</dd><dt>Guide</dt><dd>Dr. Weiping Mo</dd></dl>
+    </div>
+  </div>
+  <div class="pages" data-pages="11-18"></div>
+  <a class="back" href="#works">↑ Back to contents</a>
+</div></section>
+
+<section id="careride"><div class="wrap">
+  <div class="project-head">
+    <div><div class="num wide">03 — PRODUCT &amp; SERVICE DESIGN</div><h3>CareRide</h3></div>
+    <div>
+      <p>A ride-hailing platform that helps elderly people with leg disabilities get to the hospital on their own, with a family mode for booking and real-time tracking, plus an accessibility-friendly map. In cooperation with Shanghai Tong Ren Hospital.</p>
+      <dl class="facts"><dt>Time</dt><dd>Sep.–Dec. 2022</dd><dt>Type</dt><dd>Personal project</dd>
+        <dt>Area</dt><dd>UI/UX</dd><dt>Tool</dt><dd>Figma</dd></dl>
+      <span class="badge">User test · Average SUS score 78.5</span>
+    </div>
+  </div>
+  <div class="pages" data-pages="19-25"></div>
+  <a class="back" href="#works">↑ Back to contents</a>
+</div></section>
+
+<section id="riffloo"><div class="wrap">
+  <div class="project-head">
+    <div><div class="num wide">04 — SERVICE | PRODUCT | APP</div><h3>RiffLoo</h3></div>
+    <div>
+      <p>A conceptual toilet system for future music festivals: intelligent, modular and movable toilet units with waterless cleaning, and an app that guides attendees to the nearest available one.</p>
+      <dl class="facts"><dt>Time</dt><dd>May–July 2024</dd><dt>Type</dt><dd>Personal project</dd>
+        <dt>Tools</dt><dd>Blender, Figma</dd></dl>
+    </div>
+  </div>
+  <div class="pages" data-pages="26-30"></div>
+  <a class="back" href="#works">↑ Back to contents</a>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <div class="lbl wide">CONTACT</div>
+  <a class="mail" href="mailto:zhouxinyu@keio.jp">zhouxinyu@keio.jp</a>
+</div></footer>
+
+<div id="lb"><img alt=""></div>
+
+<script>
+  document.querySelectorAll('.pages').forEach(function(el){
+    var r = el.dataset.pages.split('-').map(Number);
+    for (var i = r[0]; i <= r[1]; i++){
+      var img = document.createElement('img');
+      var n = (i < 10 ? '0' : '') + i;
+      img.src = 'images/p-' + n + '.jpg';
+      img.alt = el.closest('section').querySelector('h3').textContent + ' — page ' + i;
+      img.loading = 'lazy';
+      el.appendChild(img);
+    }
+  });
+  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.addEventListener('click', function(e){
+    if (e.target.matches('.pages img')) { lbImg.src = e.target.src; lb.classList.add('on'); }
+    else if (lb.contains(e.target)) { lb.classList.remove('on'); }
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('on'); });
+</script>
+</body>
+</html>
