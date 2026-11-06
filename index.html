@@ -351,7 +351,7 @@
       <dl><dt>Duration</dt><dd>14 weeks</dd><dt>Type</dt><dd>Group work</dd>
         <dt>Video</dt><dd><a href="https://youtu.be/le2oSvLpWCc" target="_blank" rel="noopener">Watch on YouTube</a></dd></dl>
       <p class="oc-badge">MUSE Design Awards 2025 · Silver Winner</p>
-      <button class="view" type="button" data-pages="3-10">View project pages (8) →</button>
+      <button class="view" type="button" data-pages="3,4,7,8,9,10">View project pages (6) →</button>
     </article>
 
     <article class="oc" id="buoywear">
@@ -384,7 +384,7 @@
       <dl><dt>Time</dt><dd>May–July 2024</dd><dt>Type</dt><dd>Personal project</dd>
         <dt>Tools</dt><dd>Blender, Figma</dd></dl>
       
-      <button class="view" type="button" data-pages="26-30">View project pages (5) →</button>
+      <button class="view" type="button" data-pages="26,27,29,30">View project pages (4) →</button>
     </article>
   </div>
 </div></section>
@@ -403,8 +403,9 @@
   function step(d){ idx=(idx+d+list.length)%list.length; show(); }
   document.addEventListener('click',function(e){
     var v=e.target.closest('.view');
-    if(v){ var r=v.dataset.pages.split('-').map(Number), t=v.closest('.oc').querySelector('h4').textContent, items=[];
-      for(var n=r[0];n<=r[1];n++) items.push({src:'images/p-'+(n<10?'0':'')+n+'.jpg',alt:t+' — page '+(n-r[0]+1)});
+    if(v){ var d=v.dataset.pages, t=v.closest('.oc').querySelector('h4').textContent, items=[], ns=[];
+      if(d.indexOf(',')>-1) ns=d.split(',').map(Number); else { var r=d.split('-').map(Number); for(var n=r[0];n<=r[1];n++) ns.push(n); }
+      ns.forEach(function(n,i){ items.push({src:'images/p-'+(n<10?'0':'')+n+'.jpg',alt:t+' — page '+(i+1)}); });
       open(items,0); return; }
     if(e.target.matches('.oc-photo img')){ var it=[{src:e.target.src,alt:e.target.alt}]; if(e.target.dataset.more) e.target.dataset.more.split(',').forEach(function(u){it.push({src:u,alt:e.target.alt})}); open(it,0); return; }
     if(e.target.classList.contains('prev')){ step(-1); return; }
