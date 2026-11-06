@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zhou Xinyu — Portfolio</title>
-<meta name="description" content="Portfolio of Zhou Xinyu (Zoey): industrial, wearable and UI/UX design. Keio University, Embodied Media Lab.">
+<meta name="description" content="Portfolio of Zhou Xinyu (Zoey): industrial, wearable, hardware and UI/UX design. Keio University, Embodied Media Lab.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -90,6 +90,36 @@
   .pages img{width:100%;display:block;margin-bottom:14px;cursor:zoom-in;border:1px solid var(--line);background:var(--soft)}
   .back{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted)}
 
+  .group-label{display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted);margin:0 0 18px}
+  .group-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .grid + .group-label{margin-top:56px}
+  .grid.two{grid-template-columns:repeat(4,1fr)}
+
+  .role{display:grid;grid-template-columns:auto 1fr;gap:8px 22px;font-size:13px;border:1px solid var(--line);background:#fff;padding:20px 24px;margin-bottom:28px}
+  .role h5{grid-column:1/-1;font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:11px;letter-spacing:.1em;display:flex;align-items:center;gap:8px}
+  .role h5::before{content:"";width:6px;height:6px;background:var(--accent)}
+  .role dl{display:contents}
+  .role dt{color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+  .gallery figure{margin:0}
+  .gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:zoom-in;border:1px solid var(--line);background:var(--soft)}
+  .gallery figcaption{font-size:11.5px;color:var(--muted);margin-top:6px}
+  .gallery.single{grid-template-columns:1fr}
+  .gallery.single img{aspect-ratio:auto}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:28px}
+  .cols h4{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:12px;letter-spacing:.1em;margin-bottom:14px}
+  .steps{list-style:none;counter-reset:s;font-size:13.5px;color:var(--sub)}
+  .steps li{counter-increment:s;position:relative;padding:0 0 16px 34px;border-left:1px solid var(--line);margin-left:8px}
+  .steps li:last-child{border-left-color:transparent}
+  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:-9px;top:0;width:18px;font-size:10px;line-height:18px;text-align:center;background:var(--accent);color:#fff}
+  .steps b{display:block;color:var(--ink);font-weight:500}
+  .steps span{display:block;font-size:11.5px;color:var(--muted)}
+  .plain{font-size:13.5px;color:var(--sub);padding-left:18px}
+  .plain li+li{margin-top:8px}
+  .plain b{color:var(--ink);font-weight:500}
+  .ai{font-size:12.5px;color:var(--sub);border-left:2px solid var(--accent);padding:6px 0 6px 14px;margin-bottom:22px}
+  .ai b{color:var(--ink);font-weight:500}
+
   /* ===== Contact (last page) ===== */
   footer{min-height:70vh;display:flex;align-items:center;border-top:1px solid var(--line);
          background:linear-gradient(180deg,#fff,#eeeeec)}
@@ -102,9 +132,12 @@
   #lb.on{display:flex}
   #lb img{max-width:100%;max-height:100%}
 
-  @media (max-width:960px){.resume{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:960px){.resume{grid-template-columns:1fr 1fr}.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:640px){
-    .resume,.project-head{grid-template-columns:1fr}
+    .resume,.project-head,.cols{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .role{grid-template-columns:1fr;gap:2px}
+    .role dd{margin-bottom:8px}
     nav ul{display:none}
     .logos img{height:22px}
     .c-top .idx{display:none}
@@ -174,22 +207,119 @@
 </div></nav>
 
 <section id="works" class="works"><div class="wrap">
-  <div class="sec-title"><h2>CONTENTS</h2><span class="wide">04 PROJECTS</span></div>
+  <div class="sec-title"><h2>CONTENTS</h2><span class="wide">06 PROJECTS</span></div>
+  <div class="group-label wide">GRADUATE · KEIO KMD · 2026</div>
+  <div class="grid two">
+    <a class="card" href="#muto-box"><div class="thumb"><img src="images/th-muto.jpg" alt="Muto-box modular electronics panel" loading="lazy"></div>
+      <span class="n wide">01</span><span class="t">Muto-box</span><span class="s">Modular Electronics Panel for a Performance Wheelchair</span></a>
+    <a class="card" href="#enlight"><div class="thumb"><img src="images/th-enlight.jpg" alt="Enlight Cross Face character" loading="lazy"></div>
+      <span class="n wide">02</span><span class="t">Enlight</span><span class="s">Dark-Pattern Browser Extension</span></a>
+  </div>
+  <div class="group-label wide">UNDERGRADUATE · DONGHUA UNIVERSITY · 2020–2024</div>
   <div class="grid">
     <a class="card" href="#bruxieaser"><div class="thumb"><img src="images/th-bruxi.jpg" alt="BruxiEaser" loading="lazy"></div>
-      <span class="n wide">01</span><span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
+      <span class="n wide">03</span><span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
     <a class="card" href="#buoywear"><div class="thumb"><img src="images/th-buoy.jpg" alt="BuoyWear" loading="lazy"></div>
-      <span class="n wide">02</span><span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
+      <span class="n wide">04</span><span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
     <a class="card" href="#careride"><div class="thumb"><img src="images/th-care.jpg" alt="CareRide" loading="lazy"></div>
-      <span class="n wide">03</span><span class="t">CareRide</span><span class="s">Elderly Medical Transport Service</span></a>
+      <span class="n wide">05</span><span class="t">CareRide</span><span class="s">Elderly Medical Transport Service</span></a>
     <a class="card" href="#riffloo"><div class="thumb"><img src="images/th-riff.jpg" alt="RiffLoo" loading="lazy"></div>
-      <span class="n wide">04</span><span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
+      <span class="n wide">06</span><span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
   </div>
+</div></section>
+
+<section id="muto-box"><div class="wrap">
+  <div class="project-head">
+    <div><div class="num wide">01 — HARDWARE · FABRICATION</div><h3>Muto-box</h3></div>
+    <div>
+      <p>A modular electronics panel that hangs on the back of a performer's powered wheelchair, carrying the compute, motor-control and audio units of a wheelchair-based robot-arm performance system. Every module sits in its own 3D-printed tray, and every port stays reachable so a cable can be re-plugged in seconds during a live show.</p>
+      <dl class="facts"><dt>Time</dt><dd>Sep.–Nov. 2026</dd><dt>Type</dt><dd>Team project · Embodied Media Lab</dd>
+        <dt>Area</dt><dd>Hardware design // Digital fabrication</dd><dt>Tools</dt><dd>3D modeling, Bambu Lab H2S, laser cutter</dd></dl>
+      <span class="badge">v1.0 finalized · Nov. 2026</span>
+    </div>
+  </div>
+
+  <div class="role">
+    <h5>MY ROLE</h5><dl>
+    <dt>I did</dt><dd>Measured every electronic unit, planned the layout and cable routing, modeled the board and all 7 module trays, fabricated them (laser cutting and 3D printing), and assembled and tested the panel on the wheelchair.</dd>
+    <dt>Team</dt><dd>The lab team set the requirements (e.g. fast re-plugging during shows) and reviewed each version. The robot arm, software and other parts of the system were built by other members.</dd>
+  </dl></div>
+
+  <div class="gallery">
+    <figure><img src="images/mb-chair.jpg" alt="Muto-box mounted on the back of the wheelchair, hung from the push handles" loading="lazy"><figcaption>Mounted on the wheelchair, hung from the two push handles</figcaption></figure>
+    <figure><img src="images/mb-detail.jpg" alt="Close-up of the panel with Raspberry Pi tray, amplifier, USB extender and power strip" loading="lazy"><figcaption>Pi, amplifier and USB extender in pegboard-style trays; power strip along the bottom</figcaption></figure>
+    <figure><img src="images/mb-modules.jpg" alt="Panel on a table with modules and cables during assembly" loading="lazy"><figcaption>Two-piece printed board during assembly, with the piezo sensor switch tray</figcaption></figure>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h4>ITERATIONS</h4>
+      <ol class="steps">
+        <li><b>Measure &amp; model</b><span>Sep. 2026</span>Measured each unit, planned routing and placement, then printed the first Pi mount and USB extender housing and test-fitted them with real hardware.</li>
+        <li><b>Cardboard prototype</b><span>Oct. 2026</span>400 × 292 mm, two glued 5 mm cardboard layers, laser-cut with a 20 mm slot grid to check the layout at full size.</li>
+        <li><b>3D-printed board</b><span>Late Oct. 2026</span>390 × 330 × 5 mm in two pieces (the printer bed was too small for one), joined by a V tongue-and-groove finger joint, 4 × M2 screws and glue. All 7 trays printed with 4 rounded hooks each; the hook test passed.</li>
+        <li><b>Panel 2.0 → v1.0</b><span>Nov. 2026</span>Reprinted the board with front-side port openings, then assembled and tested it on the wheelchair with everything plugged in.</li>
+      </ol>
+    </div>
+    <div>
+      <h4>DESIGN DECISIONS</h4>
+      <ul class="plain">
+        <li><b>Re-pluggable under pressure.</b> Something always comes loose during a show, so each port gets free space in front and an opening beside it. All other cable length is coiled on the back.</li>
+        <li><b>A layout without clashes.</b> Both U2D2 controllers sit on the right edge so their thick cables wrap to the back. The amplifier sits below the Pi, offset so its DC and RCA plugs don't hit the Pi's USB-C.</li>
+        <li><b>Swappable modules.</b> Pegboard-style hooks let each tray be lifted off and replaced without tools: Raspberry Pi, 2 × U2D2, piezo sensor switch, USB extender, headphone amplifier and power strip.</li>
+      </ul>
+    </div>
+  </div>
+  <a class="back" href="#works">↑ Back to contents</a>
+</div></section>
+
+<section id="enlight"><div class="wrap">
+  <div class="project-head">
+    <div><div class="num wide">02 — RESEARCH · BRANDING · PITCH</div><h3>Enlight</h3></div>
+    <div>
+      <p>An AI browser extension that detects deceptive interface patterns on web pages and explains them to users in plain language. Its tagline: “Bring Dark Patterns Into the Light.” The extension's character, Cross Face, is a black sphere whose only feature is a cross drawn on its surface. Turning, nodding and tilting the cross is enough to show every state, so it needs no eyes or mouth.</p>
+      <dl class="facts"><dt>Time</dt><dd>Oct. 2026</dd><dt>Type</dt><dd>Team project · Build With Claude Hackathon</dd>
+        <dt>Area</dt><dd>User research // Brand // Interaction states</dd><dt>Tool</dt><dd>Figma</dd></dl>
+    </div>
+  </div>
+
+  <div class="role">
+    <h5>MY ROLE</h5><dl>
+    <dt>I did</dt><dd>User research and the survey, brand identity, and the pitch.</dd>
+    <dt>Team</dt><dd>The extension and its AI detection were coded by a teammate.</dd>
+  </dl></div>
+
+  <p class="ai"><b>Generative AI:</b> Enlight's detection and explanation features are built on Claude (Anthropic) for the Build With Claude Hackathon.</p>
+
+  <div class="cols">
+    <div>
+      <h4>FACE = A CROSS ON A SPHERE</h4>
+      <ul class="plain">
+        <li><b>Turn left / right</b>: the vertical line bends.</li>
+        <li><b>Nod / look up</b>: the horizontal line bends into ∪ / ∩.</li>
+        <li><b>Tilt</b>: the whole cross rotates.</li>
+        <li><b>Line weight, length and dashes</b>: how strong a state is.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>12 STATES, ONE COMPONENT</h4>
+      <ul class="plain">
+        <li><b>Main flow:</b> Idle → Inspect → Thinking → Notice → Explain → Repair → Compare → Done.</li>
+        <li><b>Branches:</b> Undo, Unsure (explains only, never edits), Paused and Hidden.</li>
+        <li>All 12 states are variants of one Figma component, so every screen uses the same face.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gallery single">
+    <figure><img src="images/en-crossface.jpg" alt="Cross Face state mock: the character, its head-turn grid, 12 interaction states and the component variants" loading="lazy"><figcaption>Cross Face state mock: head-turn grid, the 12 interaction states and the Face / State component</figcaption></figure>
+  </div>
+  <a class="back" href="#works">↑ Back to contents</a>
 </div></section>
 
 <section id="bruxieaser"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">01 — WEARABLE TECHNOLOGIES</div><h3>BruxiEaser</h3></div>
+    <div><div class="num wide">03 — WEARABLE TECHNOLOGIES</div><h3>BruxiEaser</h3></div>
     <div>
       <p>A lightweight, comfortable intraoral device that tracks teeth grinding during sleep, gives personalized insights through an app, and helps prevent long-term jaw health issues.</p>
       <dl class="facts"><dt>Duration</dt><dd>14 weeks</dd><dt>Type</dt><dd>Group work</dd>
@@ -203,7 +333,7 @@
 
 <section id="buoywear"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">02 — WEARABLE AND UX</div><h3>(Buoy)Wear</h3></div>
+    <div><div class="num wide">04 — WEARABLE AND UX</div><h3>(Buoy)Wear</h3></div>
     <div>
       <p>A bracelet with an integrated airbag deployment system for beachgoers and surfers at risk of rip currents. It inflates when the wearer is caught in a current, helping them stay afloat, and alerts companions through the app.</p>
       <dl class="facts"><dt>Time</dt><dd>Sep.–Nov. 2024 (8 + 2 weeks)</dd><dt>Type</dt><dd>Personal project</dd>
@@ -216,7 +346,7 @@
 
 <section id="careride"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">03 — PRODUCT &amp; SERVICE DESIGN</div><h3>CareRide</h3></div>
+    <div><div class="num wide">05 — PRODUCT &amp; SERVICE DESIGN</div><h3>CareRide</h3></div>
     <div>
       <p>A ride-hailing platform that helps elderly people with leg disabilities get to the hospital on their own, with a family mode for booking and real-time tracking, plus an accessibility-friendly map. In cooperation with Shanghai Tong Ren Hospital.</p>
       <dl class="facts"><dt>Time</dt><dd>Sep.–Dec. 2022</dd><dt>Type</dt><dd>Personal project</dd>
@@ -230,7 +360,7 @@
 
 <section id="riffloo"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">04 — SERVICE | PRODUCT | APP</div><h3>RiffLoo</h3></div>
+    <div><div class="num wide">06 — SERVICE | PRODUCT | APP</div><h3>RiffLoo</h3></div>
     <div>
       <p>A conceptual toilet system for future music festivals: intelligent, modular and movable toilet units with waterless cleaning, and an app that guides attendees to the nearest available one.</p>
       <dl class="facts"><dt>Time</dt><dd>May–July 2024</dd><dt>Type</dt><dd>Personal project</dd>
@@ -262,7 +392,7 @@
   });
   var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
   document.addEventListener('click', function(e){
-    if (e.target.matches('.pages img')) { lbImg.src = e.target.src; lb.classList.add('on'); }
+    if (e.target.matches('.pages img, .gallery img')) { lbImg.src = e.target.src; lb.classList.add('on'); }
     else if (lb.contains(e.target)) { lb.classList.remove('on'); }
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('on'); });
