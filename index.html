@@ -106,6 +106,15 @@
   .gallery figcaption{font-size:11.5px;color:var(--muted);margin-top:6px}
   .gallery.single{grid-template-columns:1fr}
   .gallery.single img{aspect-ratio:auto}
+  .duo,.trio{display:grid;gap:14px;margin-bottom:28px}
+  .duo{grid-template-columns:1fr 1fr}
+  .trio{grid-template-columns:repeat(3,1fr)}
+  .duo figure,.trio figure{margin:0}
+  .duo img,.trio img{width:100%;display:block;cursor:zoom-in;border:1px solid var(--line);background:#fff}
+  .duo img{aspect-ratio:4/5;object-fit:cover}
+  .trio img{aspect-ratio:1/1;object-fit:cover}
+  .duo figcaption,.trio figcaption{font-size:11.5px;color:var(--muted);margin-top:6px}
+  .duo figcaption b{color:var(--ink);font-weight:500}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:28px}
   .cols h4{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:12px;letter-spacing:.1em;margin-bottom:14px}
   .steps{list-style:none;counter-reset:s;font-size:13.5px;color:var(--sub)}
@@ -136,6 +145,7 @@
   @media (max-width:640px){
     .resume,.project-head,.cols{grid-template-columns:1fr}
     .gallery{grid-template-columns:1fr 1fr}
+    .trio{grid-template-columns:1fr}
     .role{grid-template-columns:1fr;gap:2px}
     .role dd{margin-bottom:8px}
     nav ul{display:none}
@@ -245,10 +255,14 @@
     <dt>Team</dt><dd>The lab team set the requirements (e.g. fast re-plugging during shows) and reviewed each version. The robot arm, software and other parts of the system were built by other members.</dd>
   </dl></div>
 
-  <div class="gallery">
-    <figure><img src="images/mb-chair.jpg" alt="Muto-box mounted on the back of the wheelchair, hung from the push handles" loading="lazy"><figcaption>Mounted on the wheelchair, hung from the two push handles</figcaption></figure>
-    <figure><img src="images/mb-detail.jpg" alt="Close-up of the panel with Raspberry Pi tray, amplifier, USB extender and power strip" loading="lazy"><figcaption>Pi, amplifier and USB extender in pegboard-style trays; power strip along the bottom</figcaption></figure>
-    <figure><img src="images/mb-modules.jpg" alt="Panel on a table with modules and cables during assembly" loading="lazy"><figcaption>Two-piece printed board during assembly, with the piezo sensor switch tray</figcaption></figure>
+  <div class="duo">
+    <figure><img src="images/mb-render.jpg" alt="3D preview of the board with all module trays" loading="lazy"><figcaption><b>Designed</b> · Board 2.9 with all 7 trays, as printed</figcaption></figure>
+    <figure><img src="images/mb-built.jpg" alt="The finished panel hung on the back of the wheelchair" loading="lazy"><figcaption><b>Built</b> · v1.0 hung from the push handles, modules in place</figcaption></figure>
+  </div>
+  <div class="trio">
+    <figure><img src="images/mb-p1-layout.jpg" alt="Front layout of the 400 x 292 mm cardboard board with module positions" loading="lazy"><figcaption>Cardboard layout · 400 × 292 mm, module footprints on a slot grid</figcaption></figure>
+    <figure><img src="images/mb-p2-drawing.jpg" alt="Dimensioned drawing of Board 2.9, split into two printed pieces with a finger joint" loading="lazy"><figcaption>Board 2.9 drawing · two pieces, finger joint, port openings</figcaption></figure>
+    <figure><img src="images/mb-p3-assembly.jpg" alt="Panel on a table during assembly with modules and cables" loading="lazy"><figcaption>Assembly · trays hooked on, cables routed to the openings</figcaption></figure>
   </div>
 
   <div class="cols">
@@ -392,7 +406,7 @@
   });
   var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
   document.addEventListener('click', function(e){
-    if (e.target.matches('.pages img, .gallery img')) { lbImg.src = e.target.src; lb.classList.add('on'); }
+    if (e.target.matches('.pages img, .gallery img, .duo img, .trio img')) { lbImg.src = e.target.src; lb.classList.add('on'); }
     else if (lb.contains(e.target)) { lb.classList.remove('on'); }
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('on'); });
