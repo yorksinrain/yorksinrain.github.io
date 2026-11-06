@@ -127,10 +127,11 @@
   .oc .view{margin:auto 20px 0;padding-top:18px;align-self:flex-start;background:none;border:0;border-bottom:1px solid var(--ink);font:inherit;font-size:12px;color:var(--ink);cursor:pointer;padding-bottom:2px}
   .oc .view:hover{color:var(--accent);border-color:var(--accent)}
   .oc dl{margin-bottom:0}
-  #lb .nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:34px;padding:16px;cursor:pointer;opacity:.7}
+  #lb .nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:28px;line-height:44px;text-align:center;cursor:pointer;opacity:.85}
+  #lb .close{position:absolute;top:12px;right:14px;z-index:2;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;opacity:.8}
   #lb .nav:hover{opacity:1}
-  #lb .prev{left:4px} #lb .next{right:4px}
-  #lb .count{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#bbb;font-size:12px}
+  #lb .prev{left:14px} #lb .next{right:14px}
+  #lb .count{position:absolute;z-index:1;pointer-events:none;bottom:14px;left:0;right:0;text-align:center;color:#bbb;font-size:12px}
   .prog{margin:18px 20px 0;padding-top:14px;border-top:1px solid var(--line)}
   .prog > span{font-size:9.5px;color:var(--muted)}
   .prog ol{list-style:none;margin-top:8px}
@@ -174,9 +175,10 @@
   footer a.mail{display:inline-block;margin-top:18px;font-family:Michroma,Arial,sans-serif;font-size:clamp(18px,3.4vw,34px);
                 text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:6px;letter-spacing:.02em}
 
-  #lb{position:fixed;inset:0;background:rgba(20,20,20,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;padding:16px}
+  #lb{position:fixed;inset:0;background:rgba(18,18,18,.97);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out;padding:16px}
   #lb.on{display:flex}
-  #lb img{max-width:100%;max-height:100%}
+  #lb img{max-width:calc(100% - 140px);max-height:calc(100% - 60px);cursor:pointer;user-select:none}
+  @media (max-width:640px){#lb img{max-width:100%}#lb .nav{top:auto;bottom:6px;transform:none}}
 
   @media (max-width:1100px){.og-grid{grid-template-columns:repeat(3,1fr)}}
   @media (max-width:960px){.og-grid,.og-grid.four,.grid.five{grid-template-columns:1fr 1fr}.resume{grid-template-columns:1fr 1fr}.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
@@ -391,7 +393,7 @@
   <a class="mail" href="mailto:zhouxinyu@keio.jp">zhouxinyu@keio.jp</a>
 </div></footer>
 
-<div id="lb"><button class="nav prev" type="button" aria-label="Previous page">‹</button><img alt=""><button class="nav next" type="button" aria-label="Next page">›</button><div class="count"></div></div>
+<div id="lb"><button class="close" type="button" aria-label="Close">×</button><button class="nav prev" type="button" aria-label="Previous page">‹</button><img alt=""><button class="nav next" type="button" aria-label="Next page">›</button><div class="count"></div></div>
 
 <script>
   var lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), cnt=lb.querySelector('.count'), list=[], idx=0;
@@ -407,8 +409,12 @@
     if(e.target.matches('.oc-photo img')){ var it=[{src:e.target.src,alt:e.target.alt}]; if(e.target.dataset.more) e.target.dataset.more.split(',').forEach(function(u){it.push({src:u,alt:e.target.alt})}); open(it,0); return; }
     if(e.target.classList.contains('prev')){ step(-1); return; }
     if(e.target.classList.contains('next')){ step(1); return; }
+    if(e.target.classList.contains('close')){ close(); return; }
+    if(e.target===lbImg){ if(list.length>1) step(1); else close(); return; }
     if(lb.contains(e.target)) close();
   });
+  var tx=null; lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){ if(tx===null||list.length<2)return; var dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>40){ step(dx<0?1:-1); } tx=null; });
   document.addEventListener('keydown',function(e){ if(!lb.classList.contains('on'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1); });
 </script>
 </body>
