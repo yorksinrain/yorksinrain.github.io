@@ -137,6 +137,14 @@
   .prog ol{list-style:none;margin-top:8px}
   .prog li{display:grid;grid-template-columns:62px 1fr;gap:8px;font-size:11.5px;color:var(--sub);line-height:1.45;padding:4px 0}
   .prog time{color:var(--ink);font-size:11px}
+  .grouped{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .og-group{grid-column:span var(--n);display:flex;flex-direction:column;min-width:0}
+  .og-lab{font-size:10px;color:var(--ink);padding-bottom:8px;margin-bottom:12px;border-bottom:1px solid var(--ink);display:flex;align-items:center;gap:8px}
+  .og-lab::before{content:"";width:6px;height:6px;background:var(--accent)}
+  .og-cards{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:18px;flex:1}
+  .og-cards > .oc{height:100%}
+  @media (max-width:1100px){.grouped{grid-template-columns:repeat(2,1fr)}.og-group{grid-column:span 1}.og-group[style*="--n:2"]{grid-column:1/-1}}
+  @media (max-width:640px){.grouped{grid-template-columns:1fr}.og-group,.og-group[style*="--n:2"]{grid-column:1/-1}.og-cards{grid-template-columns:1fr}.grid.five.grouped .og-cards{grid-template-columns:1fr 1fr}}
   .oc-photo{margin:16px 20px 0}
   .oc .ai{margin-top:14px}
   .oc-photo img{width:100%;aspect-ratio:8/7;object-fit:cover;display:block;cursor:zoom-in}
@@ -260,17 +268,25 @@
 <section id="works" class="works"><div class="wrap">
   <div class="sec-title"><h2>CONTENTS</h2><span class="wide">05 GRADUATE · 04 UNDERGRADUATE</span></div>
   <div class="group-label wide">GRADUATE · KEIO KMD · 2026</div>
-  <div class="grid five">
+  <div class="grid five grouped">
+    <div class="og-group" style="--n:1"><div class="og-lab wide">ONGOING RESEARCH</div><div class="og-cards">
     <a class="card" href="#pointy"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="14" y="10" width="92" height="70" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M14 10 L70 52" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/><circle cx="70" cy="52" r="10" fill="none" stroke="var(--accent)" stroke-width="1" opacity=".35"/><circle cx="70" cy="52" r="3.4" fill="var(--accent)"/></svg></div>
       <span class="t">Pointy</span><span class="s">Spatial Interaction</span></a>
+    </div></div>
+    <div class="og-group" style="--n:1"><div class="og-lab wide">RESEARCH WORK</div><div class="og-cards">
     <a class="card" href="#muto-box"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="30" y="14" width="60" height="62" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="42" cy="20" r="1.8" fill="currentColor"/><circle cx="78" cy="20" r="1.8" fill="currentColor"/><rect x="37" y="28" width="20" height="14" fill="currentColor"/><rect x="62" y="28" width="21" height="10" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37" y="47" width="12" height="18" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="53" y="47" width="14" height="14" fill="var(--accent)" opacity=".6"/><rect x="71" y="43" width="12" height="18" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M37 70 H83" stroke="currentColor" stroke-width="2"/></svg></div>
-      <span class="t">Muto-box</span><span class="s">BMI Mounting System</span></a>
+      <span class="t">B2J Mounting System</span><span class="s">Muto-box · BMI Performance</span></a>
+    </div></div>
+    <div class="og-group" style="--n:1"><div class="og-lab wide">COMPETITION</div><div class="og-cards">
     <a class="card" href="#stacking-light"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.1"><rect x="33" y="18" width="16" height="16"/><rect x="52" y="18" width="16" height="16"/><rect x="71" y="18" width="16" height="16"/><rect x="33" y="37" width="16" height="16"/><rect x="52" y="37" width="16" height="16"/><rect x="71" y="37" width="16" height="16"/><rect x="33" y="56" width="16" height="16"/><rect x="52" y="56" width="16" height="16"/><rect x="71" y="56" width="16" height="16"/></g><rect x="33" y="18" width="16" height="16" fill="currentColor"/><rect x="52" y="37" width="16" height="16" fill="var(--accent)" opacity=".55"/><rect x="71" y="56" width="16" height="16" fill="currentColor" opacity=".25"/></svg></div>
       <span class="t">Stacking Light</span><span class="s">Tangible Interaction · IVRC</span></a>
+    </div></div>
+    <div class="og-group" style="--n:2"><div class="og-lab wide">OTHERS</div><div class="og-cards">
     <a class="card" href="#enlight"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="60" cy="45" r="26" fill="currentColor"/><path d="M47 46 Q60 44.5 73 45.5 M60.5 32 Q59.5 45 60 58" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div>
       <span class="t">Enlight</span><span class="s">Dark-Pattern Companion</span></a>
     <a class="card" href="#kepto"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="38" cy="45" r="7" fill="currentColor"/><circle cx="58" cy="45" r="7" fill="currentColor"/><circle cx="88" cy="45" r="7" fill="var(--accent)"/><path d="M31 62 H45 M51 62 H65 M81 62 H95" stroke="currentColor" stroke-width=".8" opacity=".4"/></svg></div>
       <span class="t">三日所 KEPTO</span><span class="s">Homeware Brand · Co-founder</span></a>
+    </div></div>
   </div>
   <div class="group-label wide">UNDERGRADUATE · DONGHUA UNIVERSITY · 2020–2024</div>
   <div class="grid five">
@@ -289,8 +305,8 @@
 <section id="graduate" class="ongoing"><div class="wrap">
   <div class="sec-title"><h2>GRADUATE WORK</h2><span class="wide">KEIO KMD · EMBODIED MEDIA LAB · 2026</span></div>
   <p class="og-intro">Work from my first year at Keio, much of it still in progress. Each project is shown as a short note for now.</p>
-  <div class="og-grid">
-
+  <div class="og-grid grouped">
+    <div class="og-group" style="--n:1"><div class="og-lab wide">ONGOING RESEARCH</div><div class="og-cards">
     <article class="oc" id="pointy">
       <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="14" y="10" width="92" height="70" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M14 10 L70 52" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/><circle cx="70" cy="52" r="10" fill="none" stroke="var(--accent)" stroke-width="1" opacity=".35"/><circle cx="70" cy="52" r="3.4" fill="var(--accent)"/></svg></div>
       <span class="og-k wide">SPATIAL INTERACTION</span>
@@ -299,16 +315,18 @@
       <dl><dt>Role</dt><dd>Interaction and scenario design; the device is developed by the lab team</dd><dt>Status</dt><dd>Virtual demo Nov. 2026 · first in-room prototype Dec. 2026</dd></dl>
       <figure class="oc-photo"><img src="images/og-pointy-twin.jpg" data-more="images/og-pointy-story.jpg" alt="Digital twin of the Takeshiba round-table room with Pointy marking a remembered object" loading="lazy"><figcaption>Digital twin of the prototype room · tap for my scenario storyboard</figcaption></figure>
     </article>
-
+    </div></div>
+    <div class="og-group" style="--n:1"><div class="og-lab wide">RESEARCH WORK</div><div class="og-cards">
     <article class="oc" id="muto-box">
       <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="30" y="14" width="60" height="62" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="42" cy="20" r="1.8" fill="currentColor"/><circle cx="78" cy="20" r="1.8" fill="currentColor"/><rect x="37" y="28" width="20" height="14" fill="currentColor"/><rect x="62" y="28" width="21" height="10" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37" y="47" width="12" height="18" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="53" y="47" width="14" height="14" fill="var(--accent)" opacity=".6"/><rect x="71" y="43" width="12" height="18" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M37 70 H83" stroke="currentColor" stroke-width="2"/></svg></div>
-      <span class="og-k wide">HARDWARE · BMI PERFORMANCE</span>
-      <h4>Muto-box</h4>
+      <span class="og-k wide">MUTO-BOX · BMI PERFORMANCE</span>
+      <h4>B2J Mounting System</h4>
       <p>A modular mounting system for a brain–machine interface performance rig. It carries the rig's compute, motor-control and audio units on the back of the performer's wheelchair, so live BMI performances can travel with the performer, and any cable can be re-plugged mid-show.</p>
       <dl><dt>Role</dt><dd>Layout, 3D modeling, fabrication and on-chair testing; the BMI system is developed by the lab team</dd><dt>Status</dt><dd>v1.0 in use · Nov. 2026</dd></dl>
       <figure class="oc-photo"><img src="images/mb-stage.jpg" alt="The mounting panel on the back of the performer's wheelchair during a rehearsal" loading="lazy"><figcaption>In rehearsal, mounted on the wheelchair</figcaption></figure>
     </article>
-
+    </div></div>
+    <div class="og-group" style="--n:1"><div class="og-lab wide">COMPETITION</div><div class="og-cards">
     <article class="oc" id="stacking-light">
       <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.1"><rect x="33" y="18" width="16" height="16"/><rect x="52" y="18" width="16" height="16"/><rect x="71" y="18" width="16" height="16"/><rect x="33" y="37" width="16" height="16"/><rect x="52" y="37" width="16" height="16"/><rect x="71" y="37" width="16" height="16"/><rect x="33" y="56" width="16" height="16"/><rect x="52" y="56" width="16" height="16"/><rect x="71" y="56" width="16" height="16"/></g><rect x="33" y="18" width="16" height="16" fill="currentColor"/><rect x="52" y="37" width="16" height="16" fill="var(--accent)" opacity=".55"/><rect x="71" y="56" width="16" height="16" fill="currentColor" opacity=".25"/></svg></div>
       <span class="og-k wide">TANGIBLE INTERACTION · IVRC 2026</span>
@@ -317,7 +335,8 @@
       <dl><dt>Team</dt><dd>Three members, Embodied Media Lab</dd><dt>Status</dt><dd>IVRC 2026 accepted project · shown at VRSJ 2026</dd></dl>
       <figure class="oc-photo"><img src="images/og-stacking.jpg" data-more="images/og-stacking-full.jpg" alt="A player in a headset arranging blocks on the base, with the dark room she sees in the headset" loading="lazy"><figcaption>Arranging blocks on the base, with the view in the headset</figcaption></figure>
     </article>
-
+    </div></div>
+    <div class="og-group" style="--n:2"><div class="og-lab wide">OTHERS</div><div class="og-cards">
     <article class="oc" id="enlight">
       <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="60" cy="45" r="26" fill="currentColor"/><path d="M47 46 Q60 44.5 73 45.5 M60.5 32 Q59.5 45 60 58" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div>
       <span class="og-k wide">RESEARCH · BRAND</span>
@@ -327,7 +346,6 @@
       <figure class="oc-photo"><img src="images/og-enlight.jpg" alt="Cross Face character turning its head, drawn as a cross on a sphere" loading="lazy"><figcaption>Cross Face: turning the head by bending the cross</figcaption></figure>
       <p class="ai"><b>Generative AI:</b> the extension's detection and explanations are built on Claude (Anthropic).</p>
     </article>
-
     <article class="oc" id="kepto">
       <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="38" cy="45" r="7" fill="currentColor"/><circle cx="58" cy="45" r="7" fill="currentColor"/><circle cx="88" cy="45" r="7" fill="var(--accent)"/><path d="M31 62 H45 M51 62 H65 M81 62 H95" stroke="currentColor" stroke-width=".8" opacity=".4"/></svg></div>
       <span class="og-k wide">BRAND · TEAM</span>
@@ -336,7 +354,7 @@
       <dl><dt>Role</dt><dd>Co-founder</dd><dt>Status</dt><dd>Ongoing since 2026</dd></dl>
       <figure class="oc-photo"><img src="images/og-kepto.jpg" data-more="images/og-kepto-2.jpg,images/og-kepto-1.jpg,images/og-kepto-3.jpg,images/og-kepto-5.jpg" alt="KEPTO 三日所 product icons on the brand site" loading="lazy"><figcaption>Product icons · tap for identity, palettes and packaging</figcaption></figure>
     </article>
-
+    </div></div>
   </div>
 </div></section>
 
