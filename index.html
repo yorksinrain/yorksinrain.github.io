@@ -115,6 +115,21 @@
   .trio img{aspect-ratio:1/1;object-fit:cover}
   .duo figcaption,.trio figcaption{font-size:11.5px;color:var(--muted);margin-top:6px}
   .duo figcaption b{color:var(--ink);font-weight:500}
+  .ongoing{background:var(--soft)}
+  .og-intro{font-size:14px;color:var(--sub);max-width:640px;margin:-18px 0 34px}
+  .og-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .oc{background:#fff;border:1px solid var(--line);padding:0 0 22px;display:flex;flex-direction:column;scroll-margin-top:70px}
+  .oc .mark{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);color:var(--ink)}
+  .oc .mark svg{width:62%;height:auto}
+  .oc .og-k,.oc h4,.oc p,.oc dl{padding:0 20px}
+  .oc .og-k{font-size:9.5px;color:var(--accent);margin-top:18px}
+  .oc h4{font-size:17px;font-weight:500;margin-top:4px}
+  .oc p{font-size:13px;color:var(--sub);margin-top:10px}
+  .oc dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12px;margin-top:14px}
+  .oc dt{color:var(--muted)}
+  .oc .ai{margin:14px 20px 0;padding:4px 0 4px 12px;font-size:11.5px}
+  .og-thumb{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line)}
+  .og-thumb svg{width:70%;height:auto}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:28px}
   .cols h4{font-family:Michroma,Arial,sans-serif;font-weight:400;font-size:12px;letter-spacing:.1em;margin-bottom:14px}
   .steps{list-style:none;counter-reset:s;font-size:13.5px;color:var(--sub)}
@@ -141,11 +156,12 @@
   #lb.on{display:flex}
   #lb img{max-width:100%;max-height:100%}
 
-  @media (max-width:960px){.resume{grid-template-columns:1fr 1fr}.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:960px){.og-grid{grid-template-columns:1fr 1fr}.resume{grid-template-columns:1fr 1fr}.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:640px){
     .resume,.project-head,.cols{grid-template-columns:1fr}
     .gallery{grid-template-columns:1fr 1fr}
     .trio{grid-template-columns:1fr}
+    .og-grid{grid-template-columns:1fr}
     .role{grid-template-columns:1fr;gap:2px}
     .role dd{margin-bottom:8px}
     nav ul{display:none}
@@ -217,24 +233,29 @@
 </div></nav>
 
 <section id="works" class="works"><div class="wrap">
-  <div class="sec-title"><h2>CONTENTS</h2><span class="wide">06 PROJECTS</span></div>
+  <div class="sec-title"><h2>CONTENTS</h2><span class="wide">05 PROJECTS + 4 ONGOING</span></div>
   <div class="group-label wide">GRADUATE · KEIO KMD · 2026</div>
   <div class="grid two">
     <a class="card" href="#muto-box"><div class="thumb"><img src="images/th-muto.jpg" alt="Muto-box modular electronics panel" loading="lazy"></div>
       <span class="n wide">01</span><span class="t">Muto-box</span><span class="s">Modular Electronics Panel for a Performance Wheelchair</span></a>
-    <a class="card" href="#enlight"><div class="thumb"><img src="images/th-enlight.jpg" alt="Enlight Cross Face character" loading="lazy"></div>
-      <span class="n wide">02</span><span class="t">Enlight</span><span class="s">Dark-Pattern Browser Extension</span></a>
+    <a class="card" href="#ongoing"><div class="thumb og-thumb"><svg viewBox="0 -8 90 120" aria-hidden="true">
+        <g transform="translate(14,18)"><rect width="26" height="20" fill="none" stroke="#161616" stroke-width=".8"/><circle cx="17" cy="13" r="2.2" fill="#d8432f"/></g>
+        <g transform="translate(50,18)" fill="none" stroke="#161616" stroke-width=".7"><rect width="7" height="7"/><rect x="9" width="7" height="7"/><rect x="18" width="7" height="7"/><rect y="9" width="7" height="7"/><rect x="9" y="9" width="7" height="7" fill="#d8432f" fill-opacity=".5"/><rect x="18" y="9" width="7" height="7"/></g>
+        <g transform="translate(27,68)"><circle r="10" fill="#161616"/><path d="M-5 0.5 H5 M0.3 -5 V5" stroke="#fff" stroke-width="1" stroke-linecap="round"/></g>
+        <g transform="translate(52,60)" stroke="#161616" stroke-width="1.2" stroke-linecap="round"><path d="M2 2 H22"/><path d="M5 9 H19"/><path d="M0 16 H24"/></g>
+      </svg></div>
+      <span class="n wide">+4</span><span class="t">Ongoing</span><span class="s">Pointy · Stacking Light · Enlight · KEPTO</span></a>
   </div>
   <div class="group-label wide">UNDERGRADUATE · DONGHUA UNIVERSITY · 2020–2024</div>
   <div class="grid">
     <a class="card" href="#bruxieaser"><div class="thumb"><img src="images/th-bruxi.jpg" alt="BruxiEaser" loading="lazy"></div>
-      <span class="n wide">03</span><span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
+      <span class="n wide">02</span><span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
     <a class="card" href="#buoywear"><div class="thumb"><img src="images/th-buoy.jpg" alt="BuoyWear" loading="lazy"></div>
-      <span class="n wide">04</span><span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
+      <span class="n wide">03</span><span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
     <a class="card" href="#careride"><div class="thumb"><img src="images/th-care.jpg" alt="CareRide" loading="lazy"></div>
-      <span class="n wide">05</span><span class="t">CareRide</span><span class="s">Elderly Medical Transport Service</span></a>
+      <span class="n wide">04</span><span class="t">CareRide</span><span class="s">Elderly Medical Transport Service</span></a>
     <a class="card" href="#riffloo"><div class="thumb"><img src="images/th-riff.jpg" alt="RiffLoo" loading="lazy"></div>
-      <span class="n wide">06</span><span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
+      <span class="n wide">05</span><span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
   </div>
 </div></section>
 
@@ -287,53 +308,50 @@
   <a class="back" href="#works">↑ Back to contents</a>
 </div></section>
 
-<section id="enlight"><div class="wrap">
-  <div class="project-head">
-    <div><div class="num wide">02 — RESEARCH · BRANDING · PITCH</div><h3>Enlight</h3></div>
-    <div>
-      <p>An AI browser extension that detects deceptive interface patterns on web pages and explains them to users in plain language. Its tagline: “Bring Dark Patterns Into the Light.” The extension's character, Cross Face, is a black sphere whose only feature is a cross drawn on its surface. Turning, nodding and tilting the cross is enough to show every state, so it needs no eyes or mouth.</p>
-      <dl class="facts"><dt>Time</dt><dd>Oct. 2026</dd><dt>Type</dt><dd>Team project · Build With Claude Hackathon</dd>
-        <dt>Area</dt><dd>User research // Brand // Interaction states</dd><dt>Tool</dt><dd>Figma</dd></dl>
-    </div>
+<section id="ongoing" class="ongoing"><div class="wrap">
+  <div class="sec-title"><h2>ONGOING</h2><span class="wide">WORK IN PROGRESS · 2026</span></div>
+  <p class="og-intro">Projects still taking shape. Each is shown as a short note rather than a case study, and will be written up once it is done.</p>
+  <div class="og-grid">
+
+    <article class="oc" id="pointy">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="14" y="10" width="92" height="70" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M14 10 L70 52" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/><circle cx="70" cy="52" r="10" fill="none" stroke="var(--accent)" stroke-width="1" opacity=".35"/><circle cx="70" cy="52" r="3.4" fill="var(--accent)"/><path d="M80 62 q10 6 16 2" fill="none" stroke="currentColor" stroke-width="1"/></svg></div>
+      <span class="og-k wide">SPATIAL INTERACTION</span>
+      <h4>Pointy</h4>
+      <p>A single laser dot that lets a room point back. I design how people and space talk through it: a space that remembers where things were left, confirms what you meant when a gesture is ambiguous, and lets you drag the dot by hand.</p>
+      <dl><dt>Role</dt><dd>Interaction and scenario design; the device is developed by the lab team</dd><dt>Status</dt><dd>Virtual demo Nov. 2026 · first in-room prototype Dec. 2026</dd></dl>
+    </article>
+
+    <article class="oc" id="stacking-light">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.1"><rect x="33" y="18" width="16" height="16"/><rect x="52" y="18" width="16" height="16"/><rect x="71" y="18" width="16" height="16"/><rect x="33" y="37" width="16" height="16"/><rect x="52" y="37" width="16" height="16"/><rect x="71" y="37" width="16" height="16"/><rect x="33" y="56" width="16" height="16"/><rect x="52" y="56" width="16" height="16"/><rect x="71" y="56" width="16" height="16"/></g><rect x="33" y="18" width="16" height="16" fill="currentColor"/><rect x="52" y="37" width="16" height="16" fill="var(--accent)" opacity=".55"/><rect x="71" y="56" width="16" height="16" fill="currentColor" opacity=".25"/></svg></div>
+      <span class="og-k wide">TANGIBLE INTERACTION · IVRC 2026</span>
+      <h4>Stacking Light</h4>
+      <p>An exploration experience in a dark room where physical blocks decide what you can see. Placing blocks on a 3 × 3 sensing base opens a path; stacking them lights walls and heights, and a wrist band hums near hidden clues.</p>
+      <dl><dt>Team</dt><dd>Three members, Embodied Media Lab</dd><dt>Status</dt><dd>IVRC 2026 accepted project · shown at VRSJ 2026</dd></dl>
+    </article>
+
+    <article class="oc" id="enlight">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="60" cy="45" r="26" fill="currentColor"/><path d="M47 46 Q60 44.5 73 45.5 M60.5 32 Q59.5 45 60 58" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+      <span class="og-k wide">RESEARCH · BRAND</span>
+      <h4>Enlight</h4>
+      <p>A browser companion that makes manipulative interface design visible, then explains it in plain words. Its character is a sphere whose only face is a cross, so a turn or a nod is enough to say what it noticed.</p>
+      <dl><dt>Role</dt><dd>User research, brand identity and pitch; the extension was coded by a teammate</dd><dt>Context</dt><dd>Build With Claude Hackathon, Oct. 2026</dd></dl>
+      <p class="ai"><b>Generative AI:</b> the extension's detection and explanations are built on Claude (Anthropic).</p>
+    </article>
+
+    <article class="oc" id="kepto">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M44 30 H76"/><path d="M48 45 H72"/><path d="M40 60 H80"/></g><circle cx="88" cy="30" r="3" fill="var(--accent)"/></svg></div>
+      <span class="og-k wide">BRAND · PERSONAL</span>
+      <h4>三日所 KEPTO</h4>
+      <p>My own brand, run independently. I am currently using it as the ground for designing a matching market for people aged 45–65.</p>
+      <dl><dt>Role</dt><dd>Founder · brand and service design</dd><dt>Status</dt><dd>Ongoing since 2026</dd></dl>
+    </article>
+
   </div>
-
-  <div class="role">
-    <h5>MY ROLE</h5><dl>
-    <dt>I did</dt><dd>User research and the survey, brand identity, and the pitch.</dd>
-    <dt>Team</dt><dd>The extension and its AI detection were coded by a teammate.</dd>
-  </dl></div>
-
-  <p class="ai"><b>Generative AI:</b> Enlight's detection and explanation features are built on Claude (Anthropic) for the Build With Claude Hackathon.</p>
-
-  <div class="cols">
-    <div>
-      <h4>FACE = A CROSS ON A SPHERE</h4>
-      <ul class="plain">
-        <li><b>Turn left / right</b>: the vertical line bends.</li>
-        <li><b>Nod / look up</b>: the horizontal line bends into ∪ / ∩.</li>
-        <li><b>Tilt</b>: the whole cross rotates.</li>
-        <li><b>Line weight, length and dashes</b>: how strong a state is.</li>
-      </ul>
-    </div>
-    <div>
-      <h4>12 STATES, ONE COMPONENT</h4>
-      <ul class="plain">
-        <li><b>Main flow:</b> Idle → Inspect → Thinking → Notice → Explain → Repair → Compare → Done.</li>
-        <li><b>Branches:</b> Undo, Unsure (explains only, never edits), Paused and Hidden.</li>
-        <li>All 12 states are variants of one Figma component, so every screen uses the same face.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="gallery single">
-    <figure><img src="images/en-crossface.jpg" alt="Cross Face state mock: the character, its head-turn grid, 12 interaction states and the component variants" loading="lazy"><figcaption>Cross Face state mock: head-turn grid, the 12 interaction states and the Face / State component</figcaption></figure>
-  </div>
-  <a class="back" href="#works">↑ Back to contents</a>
 </div></section>
 
 <section id="bruxieaser"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">03 — WEARABLE TECHNOLOGIES</div><h3>BruxiEaser</h3></div>
+    <div><div class="num wide">02 — WEARABLE TECHNOLOGIES</div><h3>BruxiEaser</h3></div>
     <div>
       <p>A lightweight, comfortable intraoral device that tracks teeth grinding during sleep, gives personalized insights through an app, and helps prevent long-term jaw health issues.</p>
       <dl class="facts"><dt>Duration</dt><dd>14 weeks</dd><dt>Type</dt><dd>Group work</dd>
@@ -347,7 +365,7 @@
 
 <section id="buoywear"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">04 — WEARABLE AND UX</div><h3>(Buoy)Wear</h3></div>
+    <div><div class="num wide">03 — WEARABLE AND UX</div><h3>(Buoy)Wear</h3></div>
     <div>
       <p>A bracelet with an integrated airbag deployment system for beachgoers and surfers at risk of rip currents. It inflates when the wearer is caught in a current, helping them stay afloat, and alerts companions through the app.</p>
       <dl class="facts"><dt>Time</dt><dd>Sep.–Nov. 2024 (8 + 2 weeks)</dd><dt>Type</dt><dd>Personal project</dd>
@@ -360,7 +378,7 @@
 
 <section id="careride"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">05 — PRODUCT &amp; SERVICE DESIGN</div><h3>CareRide</h3></div>
+    <div><div class="num wide">04 — PRODUCT &amp; SERVICE DESIGN</div><h3>CareRide</h3></div>
     <div>
       <p>A ride-hailing platform that helps elderly people with leg disabilities get to the hospital on their own, with a family mode for booking and real-time tracking, plus an accessibility-friendly map. In cooperation with Shanghai Tong Ren Hospital.</p>
       <dl class="facts"><dt>Time</dt><dd>Sep.–Dec. 2022</dd><dt>Type</dt><dd>Personal project</dd>
@@ -374,7 +392,7 @@
 
 <section id="riffloo"><div class="wrap">
   <div class="project-head">
-    <div><div class="num wide">06 — SERVICE | PRODUCT | APP</div><h3>RiffLoo</h3></div>
+    <div><div class="num wide">05 — SERVICE | PRODUCT | APP</div><h3>RiffLoo</h3></div>
     <div>
       <p>A conceptual toilet system for future music festivals: intelligent, modular and movable toilet units with waterless cleaning, and an app that guides attendees to the nearest available one.</p>
       <dl class="facts"><dt>Time</dt><dd>May–July 2024</dd><dt>Type</dt><dd>Personal project</dd>
