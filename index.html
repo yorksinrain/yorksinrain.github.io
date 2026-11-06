@@ -121,6 +121,16 @@
   .grid.five{grid-template-columns:repeat(5,1fr);gap:18px}
   .grid.five .og-thumb{aspect-ratio:1/1;color:var(--ink)}
   .grid.five .t{margin-top:14px}
+  .og-grid.four{grid-template-columns:repeat(4,1fr)}
+  .oc-badge{font-size:11.5px!important;color:var(--ink)!important;margin-top:12px!important}
+  .oc-badge::before{content:"";display:inline-block;width:6px;height:6px;background:var(--accent);margin-right:8px;vertical-align:middle}
+  .oc .view{margin:auto 20px 0;padding-top:18px;align-self:flex-start;background:none;border:0;border-bottom:1px solid var(--ink);font:inherit;font-size:12px;color:var(--ink);cursor:pointer;padding-bottom:2px}
+  .oc .view:hover{color:var(--accent);border-color:var(--accent)}
+  .oc dl{margin-bottom:0}
+  #lb .nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:34px;padding:16px;cursor:pointer;opacity:.7}
+  #lb .nav:hover{opacity:1}
+  #lb .prev{left:4px} #lb .next{right:4px}
+  #lb .count{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#bbb;font-size:12px}
   .oc-photo{margin:16px 20px 0}
   .oc-photo img{width:100%;aspect-ratio:8/7;object-fit:cover;display:block;cursor:zoom-in}
   .oc-photo figcaption{font-size:11px;color:var(--muted);margin-top:5px}
@@ -163,12 +173,12 @@
   #lb img{max-width:100%;max-height:100%}
 
   @media (max-width:1100px){.og-grid{grid-template-columns:repeat(3,1fr)}}
-  @media (max-width:960px){.og-grid,.grid.five{grid-template-columns:1fr 1fr}.resume{grid-template-columns:1fr 1fr}.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:960px){.og-grid,.og-grid.four,.grid.five{grid-template-columns:1fr 1fr}.resume{grid-template-columns:1fr 1fr}.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:640px){
     .resume,.project-head,.cols{grid-template-columns:1fr}
     .gallery{grid-template-columns:1fr 1fr}
     .trio{grid-template-columns:1fr}
-    .og-grid{grid-template-columns:1fr}
+    .og-grid,.og-grid.four{grid-template-columns:1fr}
     .role{grid-template-columns:1fr;gap:2px}
     .role dd{margin-bottom:8px}
     nav ul{display:none}
@@ -255,15 +265,15 @@
       <span class="t">三日所 KEPTO</span><span class="s">Brand · Co-founder</span></a>
   </div>
   <div class="group-label wide">UNDERGRADUATE · DONGHUA UNIVERSITY · 2020–2024</div>
-  <div class="grid">
-    <a class="card" href="#bruxieaser"><div class="thumb"><img src="images/th-bruxi.jpg" alt="BruxiEaser" loading="lazy"></div>
-      <span class="n wide">01</span><span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
-    <a class="card" href="#buoywear"><div class="thumb"><img src="images/th-buoy.jpg" alt="BuoyWear" loading="lazy"></div>
-      <span class="n wide">02</span><span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
-    <a class="card" href="#careride"><div class="thumb"><img src="images/th-care.jpg" alt="CareRide" loading="lazy"></div>
-      <span class="n wide">03</span><span class="t">CareRide</span><span class="s">Elderly Medical Transport Service</span></a>
-    <a class="card" href="#riffloo"><div class="thumb"><img src="images/th-riff.jpg" alt="RiffLoo" loading="lazy"></div>
-      <span class="n wide">04</span><span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
+  <div class="grid five">
+    <a class="card" href="#bruxieaser"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><path d="M38 26 V46 Q38 66 60 66 Q82 66 82 46 V26" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M38 26 V46 Q38 66 60 66 Q82 66 82 46 V26" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="66" r="3.4" fill="var(--accent)"/><path d="M50 78 l3 -3 l3 3 l3 -3 l3 3 l3 -3 l3 3" fill="none" stroke="currentColor" stroke-width="1"/></svg></div>
+      <span class="t">BruxiEaser</span><span class="s">Intraoral Bruxism Tracker</span></a>
+    <a class="card" href="#buoywear"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><ellipse cx="60" cy="36" rx="20" ry="13" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="76" cy="27" r="3.2" fill="var(--accent)"/><path d="M28 62 q8 -6 16 0 t16 0 t16 0 t16 0" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M34 72 q8 -6 16 0 t16 0 t16 0" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/></svg></div>
+      <span class="t">BuoyWear</span><span class="s">Rip Current Lifesaving Wearable</span></a>
+    <a class="card" href="#careride"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><path d="M28 66 C46 66 44 30 64 30 S80 50 92 30" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="28" cy="66" r="4" fill="currentColor"/><rect x="86" y="18" width="12" height="12" rx="2" fill="var(--accent)"/><path d="M92 20.5 V27.5 M88.5 24 H95.5" stroke="#fff" stroke-width="1.6"/></svg></div>
+      <span class="t">CareRide</span><span class="s">Elderly Medical Transport</span></a>
+    <a class="card" href="#riffloo"><div class="thumb og-thumb"><svg viewBox="0 0 120 90" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3"><rect x="24" y="28" width="20" height="30" rx="5"/><rect x="50" y="28" width="20" height="30" rx="5"/></g><rect x="76" y="28" width="20" height="30" rx="5" fill="var(--accent)" opacity=".6"/><g fill="currentColor"><circle cx="29" cy="62" r="2"/><circle cx="39" cy="62" r="2"/><circle cx="55" cy="62" r="2"/><circle cx="65" cy="62" r="2"/><circle cx="81" cy="62" r="2"/><circle cx="91" cy="62" r="2"/></g><path d="M86 22 V12 l6 -2" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="84.5" cy="22" r="2" fill="currentColor"/></svg></div>
+      <span class="t">RiffLoo</span><span class="s">Music Festival Toilet System</span></a>
   </div>
 </div></section>
 
@@ -318,85 +328,79 @@
   </div>
 </div></section>
 
-<section id="bruxieaser"><div class="wrap">
-  <div class="project-head">
-    <div><div class="num wide">01 — WEARABLE TECHNOLOGIES</div><h3>BruxiEaser</h3></div>
-    <div>
+<section id="undergraduate"><div class="wrap">
+  <div class="sec-title"><h2>UNDERGRADUATE WORK</h2><span class="wide">DONGHUA UNIVERSITY · B.ENG. INDUSTRIAL DESIGN · 2020–2024</span></div>
+  <p class="og-intro">Product, wearable and service design projects. Open each one to page through the full project boards.</p>
+  <div class="og-grid four">
+    <article class="oc" id="bruxieaser">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><path d="M38 26 V46 Q38 66 60 66 Q82 66 82 46 V26" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M38 26 V46 Q38 66 60 66 Q82 66 82 46 V26" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="66" r="3.4" fill="var(--accent)"/><path d="M50 78 l3 -3 l3 3 l3 -3 l3 3 l3 -3 l3 3" fill="none" stroke="currentColor" stroke-width="1"/></svg></div>
+      <span class="og-k wide">WEARABLE TECHNOLOGIES</span>
+      <h4>BruxiEaser</h4>
       <p>A lightweight, comfortable intraoral device that tracks teeth grinding during sleep, gives personalized insights through an app, and helps prevent long-term jaw health issues.</p>
-      <dl class="facts"><dt>Duration</dt><dd>14 weeks</dd><dt>Type</dt><dd>Group work</dd>
+      <dl><dt>Duration</dt><dd>14 weeks</dd><dt>Type</dt><dd>Group work</dd>
         <dt>Video</dt><dd><a href="https://youtu.be/le2oSvLpWCc" target="_blank" rel="noopener">Watch on YouTube</a></dd></dl>
-      <span class="badge">MUSE Design Awards 2025 · Silver Winner</span>
-    </div>
-  </div>
-  <div class="pages" data-pages="3-10"></div>
-  <a class="back" href="#works">↑ Back to contents</a>
-</div></section>
+      <p class="oc-badge">MUSE Design Awards 2025 · Silver Winner</p>
+      <button class="view" type="button" data-pages="3-10">View project pages (8) →</button>
+    </article>
 
-<section id="buoywear"><div class="wrap">
-  <div class="project-head">
-    <div><div class="num wide">02 — WEARABLE AND UX</div><h3>(Buoy)Wear</h3></div>
-    <div>
+    <article class="oc" id="buoywear">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><ellipse cx="60" cy="36" rx="20" ry="13" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="76" cy="27" r="3.2" fill="var(--accent)"/><path d="M28 62 q8 -6 16 0 t16 0 t16 0 t16 0" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M34 72 q8 -6 16 0 t16 0 t16 0" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/></svg></div>
+      <span class="og-k wide">WEARABLE AND UX</span>
+      <h4>(Buoy)Wear</h4>
       <p>A bracelet with an integrated airbag deployment system for beachgoers and surfers at risk of rip currents. It inflates when the wearer is caught in a current, helping them stay afloat, and alerts companions through the app.</p>
-      <dl class="facts"><dt>Time</dt><dd>Sep.–Nov. 2024 (8 + 2 weeks)</dd><dt>Type</dt><dd>Personal project</dd>
+      <dl><dt>Time</dt><dd>Sep.–Nov. 2024 (8 + 2 weeks)</dd><dt>Type</dt><dd>Personal project</dd>
         <dt>Area</dt><dd>Product // UI+UX</dd><dt>Guide</dt><dd>Dr. Weiping Mo</dd></dl>
-    </div>
-  </div>
-  <div class="pages" data-pages="11-18"></div>
-  <a class="back" href="#works">↑ Back to contents</a>
-</div></section>
+      
+      <button class="view" type="button" data-pages="11-18">View project pages (8) →</button>
+    </article>
 
-<section id="careride"><div class="wrap">
-  <div class="project-head">
-    <div><div class="num wide">03 — PRODUCT &amp; SERVICE DESIGN</div><h3>CareRide</h3></div>
-    <div>
+    <article class="oc" id="careride">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><path d="M28 66 C46 66 44 30 64 30 S80 50 92 30" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/><circle cx="28" cy="66" r="4" fill="currentColor"/><rect x="86" y="18" width="12" height="12" rx="2" fill="var(--accent)"/><path d="M92 20.5 V27.5 M88.5 24 H95.5" stroke="#fff" stroke-width="1.6"/></svg></div>
+      <span class="og-k wide">PRODUCT &amp; SERVICE DESIGN</span>
+      <h4>CareRide</h4>
       <p>A ride-hailing platform that helps elderly people with leg disabilities get to the hospital on their own, with a family mode for booking and real-time tracking, plus an accessibility-friendly map. In cooperation with Shanghai Tong Ren Hospital.</p>
-      <dl class="facts"><dt>Time</dt><dd>Sep.–Dec. 2022</dd><dt>Type</dt><dd>Personal project</dd>
+      <dl><dt>Time</dt><dd>Sep.–Dec. 2022</dd><dt>Type</dt><dd>Personal project</dd>
         <dt>Area</dt><dd>UI/UX</dd><dt>Tool</dt><dd>Figma</dd></dl>
-      <span class="badge">User test · Average SUS score 78.5</span>
-    </div>
-  </div>
-  <div class="pages" data-pages="19-25"></div>
-  <a class="back" href="#works">↑ Back to contents</a>
-</div></section>
+      <p class="oc-badge">User test · Average SUS score 78.5</p>
+      <button class="view" type="button" data-pages="19-25">View project pages (7) →</button>
+    </article>
 
-<section id="riffloo"><div class="wrap">
-  <div class="project-head">
-    <div><div class="num wide">04 — SERVICE | PRODUCT | APP</div><h3>RiffLoo</h3></div>
-    <div>
+    <article class="oc" id="riffloo">
+      <div class="mark"><svg viewBox="0 0 120 90" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.3"><rect x="24" y="28" width="20" height="30" rx="5"/><rect x="50" y="28" width="20" height="30" rx="5"/></g><rect x="76" y="28" width="20" height="30" rx="5" fill="var(--accent)" opacity=".6"/><g fill="currentColor"><circle cx="29" cy="62" r="2"/><circle cx="39" cy="62" r="2"/><circle cx="55" cy="62" r="2"/><circle cx="65" cy="62" r="2"/><circle cx="81" cy="62" r="2"/><circle cx="91" cy="62" r="2"/></g><path d="M86 22 V12 l6 -2" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="84.5" cy="22" r="2" fill="currentColor"/></svg></div>
+      <span class="og-k wide">SERVICE | PRODUCT | APP</span>
+      <h4>RiffLoo</h4>
       <p>A conceptual toilet system for future music festivals: intelligent, modular and movable toilet units with waterless cleaning, and an app that guides attendees to the nearest available one.</p>
-      <dl class="facts"><dt>Time</dt><dd>May–July 2024</dd><dt>Type</dt><dd>Personal project</dd>
+      <dl><dt>Time</dt><dd>May–July 2024</dd><dt>Type</dt><dd>Personal project</dd>
         <dt>Tools</dt><dd>Blender, Figma</dd></dl>
-    </div>
+      
+      <button class="view" type="button" data-pages="26-30">View project pages (5) →</button>
+    </article>
   </div>
-  <div class="pages" data-pages="26-30"></div>
-  <a class="back" href="#works">↑ Back to contents</a>
 </div></section>
-
 <footer id="contact"><div class="wrap">
   <div class="lbl wide">CONTACT</div>
   <a class="mail" href="mailto:zhouxinyu@keio.jp">zhouxinyu@keio.jp</a>
 </div></footer>
 
-<div id="lb"><img alt=""></div>
+<div id="lb"><button class="nav prev" type="button" aria-label="Previous page">‹</button><img alt=""><button class="nav next" type="button" aria-label="Next page">›</button><div class="count"></div></div>
 
 <script>
-  document.querySelectorAll('.pages').forEach(function(el){
-    var r = el.dataset.pages.split('-').map(Number);
-    for (var i = r[0]; i <= r[1]; i++){
-      var img = document.createElement('img');
-      var n = (i < 10 ? '0' : '') + i;
-      img.src = 'images/p-' + n + '.jpg';
-      img.alt = el.closest('section').querySelector('h3').textContent + ' — page ' + i;
-      img.loading = 'lazy';
-      el.appendChild(img);
-    }
+  var lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), cnt=lb.querySelector('.count'), list=[], idx=0;
+  function show(){ lbImg.src=list[idx].src; lbImg.alt=list[idx].alt; cnt.textContent=list.length>1?(idx+1)+' / '+list.length:''; lb.querySelectorAll('.nav').forEach(function(b){b.style.display=list.length>1?'':'none'}); }
+  function open(items,i){ list=items; idx=i||0; show(); lb.classList.add('on'); }
+  function close(){ lb.classList.remove('on'); }
+  function step(d){ idx=(idx+d+list.length)%list.length; show(); }
+  document.addEventListener('click',function(e){
+    var v=e.target.closest('.view');
+    if(v){ var r=v.dataset.pages.split('-').map(Number), t=v.closest('.oc').querySelector('h4').textContent, items=[];
+      for(var n=r[0];n<=r[1];n++) items.push({src:'images/p-'+(n<10?'0':'')+n+'.jpg',alt:t+' — page '+(n-r[0]+1)});
+      open(items,0); return; }
+    if(e.target.matches('.oc-photo img')){ open([{src:e.target.src,alt:e.target.alt}],0); return; }
+    if(e.target.classList.contains('prev')){ step(-1); return; }
+    if(e.target.classList.contains('next')){ step(1); return; }
+    if(lb.contains(e.target)) close();
   });
-  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
-  document.addEventListener('click', function(e){
-    if (e.target.matches('.pages img, .gallery img, .duo img, .trio img, .oc-photo img')) { lbImg.src = e.target.src; lb.classList.add('on'); }
-    else if (lb.contains(e.target)) { lb.classList.remove('on'); }
-  });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('on'); });
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('on'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1); });
 </script>
 </body>
 </html>
